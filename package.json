@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "build": "cross-env NODE_ENV=production vite-ssg build",
-    "dev": "vite --port 3333 --open",
+    "dev": "vite --host",
     "lint": "eslint \"**/*.{vue,ts,js}\"",
     "preview": "vite preview",
     "preview-https": "serve dist",
@@ -14,6 +14,7 @@
     "nprogress": "^0.2.0",
     "pinia": "^2.0.0-rc.14",
     "prism-theme-vars": "^0.2.2",
+    "vant": "^3.2.6",
     "vue": "^3.2.20",
     "vue-demi": "^0.11.4",
     "vue-i18n": "^9.1.9",

@@ -1,10 +1,12 @@
 <script setup lang="ts">
 const router = useRouter()
+const route = useRoute()
 const { t } = useI18n()
 </script>
 
 <template>
   <main class="px-4 py-10 text-center text-teal-700 dark:text-gray-200">
+    <pre class="text-left">{{ route.params.all }}</pre>
     <div>
       <p class="text-4xl">
         <carbon-warning class="inline-block" />
