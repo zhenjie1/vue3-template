@@ -6,6 +6,7 @@ import Layouts from 'vite-plugin-vue-layouts'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
+import { VantResolver } from 'unplugin-vue-components/resolvers'
 import AutoImport from 'unplugin-auto-import/vite'
 import Markdown from 'vite-plugin-md'
 import WindiCSS from 'vite-plugin-windicss'
@@ -27,6 +28,16 @@ export default defineConfig({
     Vue({
       include: [/\.vue$/, /\.md$/],
     }),
+
+    // styleImport({
+    //   libs: [
+    //     {
+    //       libraryName: 'vant',
+    //       esModule: true,
+    //       resolveStyle: name => `vant/es/${name}/style`,
+    //     },
+    //   ],
+    // }),
 
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
@@ -58,6 +69,7 @@ export default defineConfig({
 
       // custom resolvers
       resolvers: [
+        VantResolver(),
         // auto import icons
         // https://github.com/antfu/unplugin-icons
         IconsResolver({
@@ -66,7 +78,7 @@ export default defineConfig({
         }),
       ],
 
-      dts: 'src/components.d.ts',
+      dts: 'src/typing/components.d.ts',
     }),
 
     // https://github.com/antfu/unplugin-icons
